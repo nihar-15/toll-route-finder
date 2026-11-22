@@ -1,7 +1,9 @@
 package com.example.geo.geo.controller ;
 
 import com.example.geo.geo.dto.* ;
-import com.example.geo.geo.service.* ;
+import com.example.geo.geo.service.TollService ;
+import com.example.geo.geo.service.RouteService ;
+import com.example.geo.geo.service.GeocodingService ;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +14,11 @@ public class TollController {
 
     private final GeocodingService geocodingService;
     private final RouteService routeService;
-    private final TollPlazaService tollPlazaService;
+    private final TollService tollPlazaService;
 
     public TollController(GeocodingService geocodingService,
                                RouteService routeService,
-                               TollPlazaService tollPlazaService) {
+                               TollService tollPlazaService) {
         this.geocodingService = geocodingService;
         this.routeService = routeService;
         this.tollPlazaService = tollPlazaService;
